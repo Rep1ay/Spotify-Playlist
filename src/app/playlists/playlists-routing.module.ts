@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PlaylistsComponent } from './playlists.component';
 import { RouterModule, Routes } from '@angular/router';
 
