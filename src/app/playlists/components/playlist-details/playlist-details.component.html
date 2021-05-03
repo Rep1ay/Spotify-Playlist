@@ -1,16 +1,22 @@
 <mat-list>
     <mat-list-item>
         <span matLine>Name:</span>
-        <span matLine>My Playlist</span>
+        <span matLine>{{playlist.name}}</span>
     </mat-list-item>
     <mat-list-item>
         <span matLine>Public:</span>
-        <span matLine>Yes</span>
+        <!-- <span matLine [ngStyle]="{
+            color: playlist.public ? 'green' : 'red'
+        }">
+            {{playlist.public ? 'Yes' : 'No'}}</span> -->
+        <span matLine class="is-public" [ngClass]="{
+            'is-public-yes': playlist.public,
+            'is-public-no': !playlist.public
+        }">
+            {{playlist.public ? 'Yes' : 'No'}}</span>
     </mat-list-item>
     <mat-list-item>
         <span matLine>Description:</span>
-        <span matLine>My Playlist Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel fugiat mollitia beatae
-            et commodi aliquid nam eaque officia, obcaecati expedita.
-        </span>
+        <span matLine>{{playlist.description}}</span>
     </mat-list-item>
 </mat-list>

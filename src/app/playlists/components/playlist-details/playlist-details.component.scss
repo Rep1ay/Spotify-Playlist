@@ -1,3 +1,15 @@
 :host {
-  display: block;
+    display: block;
+}
+
+.is-public {
+    border-bottom: 1px solid currentColor
+}
+
+.is-public-yes {
+    color: green
+}
+
+.is-public-no {
+    color: red
 }
