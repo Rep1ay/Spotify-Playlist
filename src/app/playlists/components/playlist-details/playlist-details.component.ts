@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistDetailsComponent implements OnInit {
 
+  playlist = {
+    id: '123',
+    name: 'My Playlist',
+    public: true,
+    description: 'Long descr...'
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
