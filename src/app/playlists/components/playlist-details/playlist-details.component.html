@@ -22,7 +22,7 @@
             'is-public-yes': playlist.public,
             'is-public-no': !playlist.public
           }">
-      {{ playlist.public? 'Yes' : 'No' }}
+      {{ playlist.public | yesno: 'Yeah' : 'Nope'}}
     </span>
   </mat-list-item>
 
