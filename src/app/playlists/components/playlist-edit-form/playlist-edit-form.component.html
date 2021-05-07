@@ -1,11 +1,23 @@
-<mat-form-field>
-    <input matInput placeholder="Name">
-</mat-form-field>
-<!-- 
-<mat-form-field>
-    <mat-ckeckbox>Public:</mat-ckeckbox>
-</mat-form-field>
+<div fxLayout="column" fxLayoutAlign="stretch stretch" fxLayoutGap="20px">
 
-<mat-form-field>
-    <matInput matInput placeholder="Description"></matInput>
-</mat-form-field> -->
+    <pre>{{ playlist | json }}</pre>
+  
+  
+    <mat-form-field>
+      <!-- <mat-label>Name:</mat-label> -->
+      <input matInput placeholder="Name" [(ngModel)]="playlist.name">
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <mat-hint>{{playlist.name.length}} / 170</mat-hint>
+    </mat-form-field>
+  
+    <div>
+      <mat-checkbox [(ngModel)]="playlist.public">Public</mat-checkbox>
+    </div>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Description"
+      [(ngModel)]="playlist.description"></textarea>
+    </mat-form-field>
+  
+  </div>
+  

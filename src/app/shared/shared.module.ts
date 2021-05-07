@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
+// npm i @angular/flex-layout @angular/cdk
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
@@ -9,21 +11,22 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { FormsModule } from '@angular/forms';
 
-import { FlexLayoutModule } from '@angular/flex-layout'
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatSidenavModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatFormFieldModule,
     MatDividerModule,
-    FlexLayoutModule,
+    MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule,
   ],
   exports: [
     MatSidenavModule,
@@ -34,8 +37,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+     MatCheckboxModule,
+     FormsModule,
   ]
-
 })
 export class SharedModule { }

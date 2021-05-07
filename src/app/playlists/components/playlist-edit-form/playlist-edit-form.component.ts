@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistEditFormComponent implements OnInit {
 
+
   playlist = {
-    id: '123',
-    name: 'My Playlist',
+    id:'123',
+    name:'My playlist',
     public: true,
-    description: 'Long descr...'
+    description: 'Longer description ...'
   }
 
   constructor() { }

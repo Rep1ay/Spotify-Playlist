@@ -1,22 +1,33 @@
-<mat-list>
-    <mat-list-item>
-        <span matLine>Name:</span>
-        <span matLine>{{playlist.name}}</span>
-    </mat-list-item>
-    <mat-list-item>
-        <span matLine>Public:</span>
-        <!-- <span matLine [ngStyle]="{
-            color: playlist.public ? 'green' : 'red'
-        }">
-            {{playlist.public ? 'Yes' : 'No'}}</span> -->
-        <span matLine class="is-public" [ngClass]="{
+<!-- mat-list>mat-list-item*3>span[matLine]{Name}+span{My Playlist} -->
+<mat-list [attr.data-id]="playlist.id">
+  <mat-list-item>
+    <span matLine>Name:</span>
+    <span matLine [style.font-size.px]="12 + 10">
+      {{playlist.name}}
+    </span>
+  </mat-list-item>
+
+  <mat-list-item>
+    <span matLine>Public:</span>
+    <!-- <span matLine [style.color]="playlist.public? 'green':'red' "> -->
+    <!-- <span matLine [ngStyle]="getStyles()"> -->
+    <!-- <span matLine [ngStyle]="{
+        color: playlist.public? 'green':'red'
+      }"> -->
+    <!-- <span matLine class="is-public"
+          [class.is-public-yes]="playlist.public"
+          [class.is-public-no]="!playlist.public"> -->
+    <span matLine class="is-public"
+          [ngClass]="{
             'is-public-yes': playlist.public,
             'is-public-no': !playlist.public
-        }">
-            {{playlist.public ? 'Yes' : 'No'}}</span>
-    </mat-list-item>
-    <mat-list-item>
-        <span matLine>Description:</span>
-        <span matLine>{{playlist.description}}</span>
-    </mat-list-item>
+          }">
+      {{ playlist.public? 'Yes' : 'No' }}
+    </span>
+  </mat-list-item>
+
+  <mat-list-item>
+    <span matLine>Description:</span>
+    <span matLine>{{ playlist.description }}</span>
+  </mat-list-item>
 </mat-list>

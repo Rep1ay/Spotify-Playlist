@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class PlaylistDetailsComponent implements OnInit {
 
   playlist = {
-    id: '123',
-    name: 'My Playlist',
+    id:'123',
+    name:'My playlist',
     public: true,
-    description: 'Long descr...'
+    description: 'Longer description ...'
   }
-  
+
   constructor() { }
 
   ngOnInit(): void {

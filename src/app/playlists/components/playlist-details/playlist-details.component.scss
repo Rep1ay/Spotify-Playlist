@@ -1,15 +1,8 @@
-:host {
-    display: block;
+
+
+.is-public{
+  border-bottom:1px solid currentColor
 }
 
-.is-public {
-    border-bottom: 1px solid currentColor
-}
-
-.is-public-yes {
-    color: green
-}
-
-.is-public-no {
-    color: red
-}
+.is-public-yes{color:red;}
+.is-public-no{color:green}

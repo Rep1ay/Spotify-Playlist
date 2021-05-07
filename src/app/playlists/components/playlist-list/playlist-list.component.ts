@@ -7,25 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistListComponent implements OnInit {
 
-  playlists = [{
-    id: '123',
-    name: 'My Playlist 1',
-    public: true,
-    description: 'Long descr...'
-  },
-  {
-    id: '456',
-    name: 'My Playlist 2',
-    public: true,
-    description: 'Long descr...'
-  },
-  {
-    id: '789',
-    name: 'My Playlist 3',
-    public: true,
-    description: 'Long descr...'
-  }
-]
+
+  playlists = [
+    {
+      id: '123',
+      name: 'My playlist',
+      public: true,
+      description: 'Longer description ...'
+    },
+    {
+      id: '234',
+      name: 'My playlist 234',
+      public: true,
+      description: 'Longer description ...'
+    },
+    {
+      id: '345',
+      name: 'My playlist 345',
+      public: true,
+      description: 'Longer description ...'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

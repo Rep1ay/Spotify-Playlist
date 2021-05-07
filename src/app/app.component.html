@@ -1,23 +1,23 @@
 <mat-sidenav-container class="example-container" fxFlexFill>
-    <mat-sidenav #sidenav mode="side" opened fxLayout="column" fxFlex="1 1 150px" fxLayoutAlign="start start" fxLayoutGap="20px">
-        <mat-toolbar color="primary">
-            <mat-icon></mat-icon>
-        </mat-toolbar>
-        <mat-list>
-            <mat-list-item routerLink="/music/search">
-                Music Search
-            </mat-list-item>
-            <mat-list-item routerLink="/playlists">
-                Playlists
-            </mat-list-item>
-        </mat-list>
-        Sidenav content
-    </mat-sidenav>
-
-    <mat-sidenav-content class="content-wraper">
-        <mat-toolbar color="primary">
-            <mat-icon></mat-icon>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
+  <mat-sidenav mode="side" opened fxFlex="1 1 200px" fxLayout="column" fxLayoutGap="20px">
+    <mat-toolbar color="primary">
+      <mat-icon></mat-icon>
+    </mat-toolbar>
+    <mat-list>
+      <mat-list-item routerLink="/music/search">
+        Music search
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item routerLink="/playlists">
+        Playlists
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-wrapper">
+    <mat-toolbar color="primary">
+      <mat-icon></mat-icon>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
