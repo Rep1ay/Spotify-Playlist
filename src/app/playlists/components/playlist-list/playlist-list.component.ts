@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPlaylist } from 'src/app/core/model/playlist';
 
 @Component({
   selector: 'app-playlist-list',
@@ -7,29 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistListComponent implements OnInit {
 
-
-  playlists = [
-    {
-      id: '123',
-      name: 'My playlist',
-      public: true,
-      description: 'Longer description ...'
-    },
-    {
-      id: '234',
-      name: 'My playlist 234',
-      public: true,
-      description: 'Longer description ...'
-    },
-    {
-      id: '345',
-      name: 'My playlist 345',
-      public: true,
-      description: 'Longer description ...'
-    }
-  ]
-
   selectedId = "234"
+
+  playlists: IPlaylist[] = [];
 
   constructor() { }
 
