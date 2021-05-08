@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IPlaylist } from 'src/app/core/model/playlist';
 
 @Component({
@@ -8,7 +8,7 @@ import { IPlaylist } from 'src/app/core/model/playlist';
 })
 export class PlaylistDetailsComponent implements OnInit {
 
-  playlist: IPlaylist = {
+  @Input() playlist: IPlaylist = {
     id:'123',
     name:'My playlist',
     public: true,

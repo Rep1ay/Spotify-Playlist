@@ -31,6 +31,9 @@ export class PlaylistsComponent implements OnInit {
     }
   ]
 
+  selectedId = "234";
+  selected = this.playlists[1]
+
   constructor() { }
 
   ngOnInit(): void {
