@@ -16,14 +16,6 @@ export class PlaylistEditFormComponent implements OnInit {
     description: 'Longer description ...'
   }
 
-  counter = 0;
-
-  constructor() {
-    setInterval(() => {
-      this.counter++;
-    }, 1000)
-   }
-
   ngOnInit(): void {
   }
 
