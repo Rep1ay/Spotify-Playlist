@@ -5,16 +5,15 @@
     <app-playlist-list></app-playlist-list>
   </div>
   <div fxFlex="50">
-    
-    <div *ngIf="mode === 'details'; then detailsRef; else editRef"></div>
-
-    <ng-template #detailsRef>
-      <app-playlist-details></app-playlist-details>
-      <button (click)="mode = 'edit'">Edit</button>
-    </ng-template>
-    <ng-template #editRef>
-      <app-playlist-edit-form></app-playlist-edit-form>
-      <button (click)="mode = 'details'">Details</button>
-    </ng-template>
+    <div [ngSwitch]="mode">
+      <div *ngSwitchCase="'details'">
+        <app-playlist-details></app-playlist-details>
+        <button (click)="mode = 'edit'">Edit</button>
+      </div>
+      <div *ngSwitchCase="'edit'">
+        <app-playlist-edit-form></app-playlist-edit-form>
+        <button (click)="mode = 'details'">Details</button>
+      </div>
+    </div>
   </div>
 </div>
