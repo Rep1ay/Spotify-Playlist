@@ -1,7 +1,10 @@
 
 <!-- mat-list>mat-list-item*3>span[matLine]{Text}+mat-divider -->
 <mat-list>
-  <mat-list-item *ngFor="let playlist of playlists; index as i; trackBy: trackFn">
+  <mat-list-item *ngFor="let playlist of playlists; index as i; trackBy: trackFn"
+    [class.active]="playlist.id === selectedId"
+    (click)="selectItem(playlist.id)"
+  >
     <span matLine>
       {{i}} {{playlist.name}}
     </span>

@@ -29,6 +29,8 @@ export class PlaylistListComponent implements OnInit {
     }
   ]
 
+  selectedId = "234"
+
   constructor() { }
 
   ngOnInit(): void {
@@ -36,6 +38,10 @@ export class PlaylistListComponent implements OnInit {
 
   trackFn(index: number, item: any){
     return item.id;
+  }
+
+  selectItem(id: string){
+    this.selectedId = id
   }
 
 }
