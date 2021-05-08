@@ -1,16 +1,10 @@
 
 <!-- mat-list>mat-list-item*3>span[matLine]{Text}+mat-divider -->
 <mat-list>
-  <mat-list-item>
-    <span matLine>Text</span>
-    <mat-divider></mat-divider>
-  </mat-list-item>
-  <mat-list-item>
-    <span matLine>Text</span>
-    <mat-divider></mat-divider>
-  </mat-list-item>
-  <mat-list-item>
-    <span matLine>Text</span>
+  <mat-list-item *ngFor="let playlist of playlists; index as i; trackBy: trackFn">
+    <span matLine>
+      {{i}} {{playlist.name}}
+    </span>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>

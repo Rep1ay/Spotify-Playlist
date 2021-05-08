@@ -34,4 +34,8 @@ export class PlaylistListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  trackFn(index: number, item: any){
+    return item.id;
+  }
+
 }

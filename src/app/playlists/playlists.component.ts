@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistsComponent implements OnInit {
 
+  mode : 'details' | 'edit' = 'details';
+
   constructor() { }
 
   ngOnInit(): void {
