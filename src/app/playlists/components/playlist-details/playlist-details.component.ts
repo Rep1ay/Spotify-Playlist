@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IPlaylist } from 'src/app/core/model/playlist';
 
 @Component({
@@ -14,10 +14,20 @@ export class PlaylistDetailsComponent implements OnInit {
     public: true,
     description: 'Longer description ...'
   }
+
+  @Output() edit = new EventEmitter();
   
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  canvelClicked(){
+    this.edit.emit();
+  }
+
+  save(){
+    
   }
 
 }

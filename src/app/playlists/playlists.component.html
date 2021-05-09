@@ -11,12 +11,10 @@
   <div fxFlex="50">
     <div [ngSwitch]="mode">
       <div *ngSwitchCase="'details'">
-        <app-playlist-details [playlist]="selected!"></app-playlist-details>
-        <button (click)="mode = 'edit'">Edit</button>
+        <app-playlist-details (edit)="switchToEdit()" [playlist]="selected!"></app-playlist-details>
       </div>
       <div *ngSwitchCase="'edit'">
-        <app-playlist-edit-form></app-playlist-edit-form>
-        <button (click)="mode = 'details'">Details</button>
+        <app-playlist-edit-form (cancel)="switchToDetails()" (save)="save()"></app-playlist-edit-form>
       </div>
     </div>
   </div>

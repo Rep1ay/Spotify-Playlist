@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatButtonModule } from '@angular/material/button'
 import { FormsModule } from '@angular/forms';
 import { YesnoPipe } from './yesno/yesno.pipe';
 
@@ -30,6 +31,7 @@ import { YesnoPipe } from './yesno/yesno.pipe';
     MatInputModule,
     MatCheckboxModule,
     FormsModule,
+    MatButtonModule
   ],
   exports: [
     MatSidenavModule,
@@ -43,6 +45,7 @@ import { YesnoPipe } from './yesno/yesno.pipe';
      MatCheckboxModule,
      FormsModule,
      YesnoPipe,
+     MatButtonModule
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-playlist-edit-form',
@@ -16,7 +16,18 @@ export class PlaylistEditFormComponent implements OnInit {
     description: 'Longer description ...'
   }
 
+@Output() cancel = new EventEmitter();
+  @Output() save = new EventEmitter();
+
   ngOnInit(): void {
+  }
+
+  cancelClicked(){
+    this.cancel.emit()
+  }
+
+  saveClicked(){
+    this.save.emit()
   }
 
 }

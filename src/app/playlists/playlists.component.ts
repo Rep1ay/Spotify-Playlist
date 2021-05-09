@@ -39,6 +39,22 @@ export class PlaylistsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  switchToEdit(){
+    this.mode = 'edit';
+  }
+
+  switchToDetails(){
+    this.mode = 'details';
+  }
+
+  save(){
+
+  }
+
+  cancel(){
+    
+  }
+
   selectItem(id: IPlaylist['id']){
     this.selectedId = id;
     this.selected = this.playlists.find(item => item.id === id);
