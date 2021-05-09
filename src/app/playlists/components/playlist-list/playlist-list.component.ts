@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IPlaylist } from 'src/app/core/model/playlist';
 
 @Component({
@@ -8,10 +8,11 @@ import { IPlaylist } from 'src/app/core/model/playlist';
 })
 export class PlaylistListComponent implements OnInit {
 
-  selectedId = "234"
+  @Input() selectedId = "234"
 
   @Input ('items') playlists: IPlaylist[] = [];
 
+  @Output() selectedIdChange = new EventEmitter<IPlaylist['id']>();
 
   constructor() { }
 
@@ -23,7 +24,8 @@ export class PlaylistListComponent implements OnInit {
   }
 
   selectItem(id: string){
-    this.selectedId = id
+    this.selectedId = id;
+    this.selectedIdChange.emit(id)
   }
 
 }

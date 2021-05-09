@@ -14,7 +14,7 @@ export class PlaylistDetailsComponent implements OnInit {
     public: true,
     description: 'Longer description ...'
   }
-
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -32,11 +32,15 @@ export class PlaylistsComponent implements OnInit {
   ]
 
   selectedId = "234";
-  selected = this.playlists[1]
+  selected: IPlaylist | undefined = this.playlists[1];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectItem(id: IPlaylist['id']){
+    this.selectedId = id;
+    this.selected = this.playlists.find(item => item.id === id);
+  }
 }
