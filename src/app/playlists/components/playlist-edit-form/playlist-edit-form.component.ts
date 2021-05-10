@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IPlaylist } from 'src/app/core/model/playlist';
 
 @Component({
   selector: 'app-playlist-edit-form',
@@ -9,24 +10,19 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
 export class PlaylistEditFormComponent implements OnInit {
 
 
-  playlist = {
-    id:'123',
-    name:'My playlist',
-    public: true,
-    description: 'Longer description ...'
-  }
+  @Input() playlist!: IPlaylist;
 
-@Output() cancel = new EventEmitter();
+  @Output() cancel = new EventEmitter();
   @Output() save = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  cancelClicked(){
+  cancelClicked() {
     this.cancel.emit()
   }
 
-  saveClicked(){
+  saveClicked() {
     this.save.emit()
   }
 

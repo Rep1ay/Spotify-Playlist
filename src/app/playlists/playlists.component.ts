@@ -31,8 +31,8 @@ export class PlaylistsComponent implements OnInit {
     }
   ]
 
-  selectedId = "234";
-  selected: IPlaylist | undefined = this.playlists[1];
+  selectedId?: IPlaylist['id'];
+  selected?: IPlaylist;
 
   constructor() { }
 
@@ -56,7 +56,7 @@ export class PlaylistsComponent implements OnInit {
   }
 
   selectItem(id: IPlaylist['id']){
-    this.selectedId = id;
-    this.selected = this.playlists.find(item => item.id === id);
+    this.selectedId = this.selectedId === id ? undefined : id;
+    this.selected = this.playlists.find(item => item.id === this.selectedId);
   }
 }

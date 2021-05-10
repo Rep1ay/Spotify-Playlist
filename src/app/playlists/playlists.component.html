@@ -9,12 +9,13 @@
     ></app-playlist-list>
   </div>
   <div fxFlex="50">
-    <div [ngSwitch]="mode">
+    <p *ngIf="!selected">Select the playlist</p>
+    <div [ngSwitch]="mode" *ngIf="selected">
       <div *ngSwitchCase="'details'">
-        <app-playlist-details (edit)="switchToEdit()" [playlist]="selected!"></app-playlist-details>
+        <app-playlist-details (edit)="switchToEdit()" [playlist]="selected"></app-playlist-details>
       </div>
       <div *ngSwitchCase="'edit'">
-        <app-playlist-edit-form (cancel)="switchToDetails()" (save)="save()"></app-playlist-edit-form>
+        <app-playlist-edit-form [playlist]="selected" (cancel)="switchToDetails()" (save)="save()"></app-playlist-edit-form>
       </div>
     </div>
   </div>

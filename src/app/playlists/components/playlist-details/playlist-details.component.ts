@@ -8,18 +8,16 @@ import { IPlaylist } from 'src/app/core/model/playlist';
 })
 export class PlaylistDetailsComponent implements OnInit {
 
-  @Input() playlist: IPlaylist = {
-    id:'123',
-    name:'My playlist',
-    public: true,
-    description: 'Longer description ...'
-  }
+  @Input() playlist!: IPlaylist;
 
   @Output() edit = new EventEmitter();
   
   constructor() { }
 
   ngOnInit(): void {
+    if(!this.playlist){
+      throw new Error('No playlist')
+    }
   }
 
   canvelClicked(){
