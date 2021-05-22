@@ -1,22 +1,22 @@
 <div fxLayout="column" fxLayoutAlign="stretch stretch" fxLayoutGap="20px">
-  <!-- <pre>{{ playlist | json }}</pre> -->
+  <!-- <pre>{{ draft | json }}</pre> -->
 
   <mat-form-field>
     <!-- <mat-label>Name:</mat-label> -->
-    <input matInput placeholder="Name" [(ngModel)]="playlist.name" />
+    <input matInput placeholder="Name" [(ngModel)]="draft.name" />
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-hint>{{ playlist.name.length }} / 170</mat-hint>
+    <mat-hint>{{ draft.name.length }} / 170</mat-hint>
   </mat-form-field>
 
   <div>
-    <mat-checkbox [(ngModel)]="playlist.public">Public</mat-checkbox>
+    <mat-checkbox [(ngModel)]="draft.public">Public</mat-checkbox>
   </div>
 
   <mat-form-field>
     <textarea
       matInput
       placeholder="Description"
-      [(ngModel)]="playlist.description"
+      [(ngModel)]="draft.description"
     ></textarea>
   </mat-form-field>
 </div>

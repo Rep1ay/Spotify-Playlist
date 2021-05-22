@@ -12,10 +12,13 @@ export class PlaylistEditFormComponent implements OnInit {
 
   @Input() playlist!: IPlaylist;
 
+  draft!: IPlaylist;
+
   @Output() cancel = new EventEmitter();
   @Output() save = new EventEmitter();
 
   ngOnInit(): void {
+    this.draft = { ...this.playlist};
   }
 
   cancelClicked() {
