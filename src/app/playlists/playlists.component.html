@@ -15,7 +15,7 @@
         <app-playlist-details (edit)="switchToEdit()" [playlist]="selected"></app-playlist-details>
       </div>
       <div *ngSwitchCase="'edit'">
-        <app-playlist-edit-form [playlist]="selected" (cancel)="switchToDetails()" (save)="save()"></app-playlist-edit-form>
+        <app-playlist-edit-form [playlist]="selected" (cancel)="switchToDetails()" (save)="save($event)"></app-playlist-edit-form>
       </div>
     </div>
   </div>

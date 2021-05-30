@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { EventEmitter, Inject, Injectable } from '@angular/core';
 import { playlistsMock } from '../../data/playlist.mock';
 import { IPlaylist, IPlaylistsSource } from '../../model/playlist';
 
@@ -7,22 +7,18 @@ import { IPlaylist, IPlaylistsSource } from '../../model/playlist';
 })
 export class PlaylistService implements IPlaylistsSource{
 
-  playlists: IPlaylist[] = playlistsMock
+  playlistChage = new EventEmitter<IPlaylist[]>();
 
-  constructor() {   }
+  playlists: IPlaylist[] = playlistsMock;
+
+  constructor() {}
 
   getPlaylists(): IPlaylist[]{
     return this.playlists;
   }
 
   savePlaylists(draft: IPlaylist){
-    debugger
-    const playlists = [...this.playlists];
-
-    const index = playlists.findIndex(p => p.id == draft.id);
-
-    if(index !== -1){
-      playlists[index] = draft
-    }
+      this.playlists = this.playlists.map(p => p.id === draft.id ? draft : p);
+      this.playlistChage.emit(this.playlists);
   }
 }

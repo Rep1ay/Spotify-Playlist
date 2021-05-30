@@ -20,6 +20,9 @@ export class PlaylistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.playlists = this.playlistsService.getPlaylists();
+    this.playlistsService.playlistChage.subscribe( playlist => {
+      this.playlists = playlist;
+    })
   }
 
   switchToEdit(){
@@ -32,6 +35,7 @@ export class PlaylistsComponent implements OnInit {
 
   save(draft: IPlaylist){
     this.playlistsService.savePlaylists(draft);
+    this.switchToDetails();
   }
 
   cancel(){
