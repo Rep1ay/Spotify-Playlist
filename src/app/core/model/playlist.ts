@@ -4,3 +4,9 @@ export interface IPlaylist {
     public: boolean;
     description: string;
 }
+
+
+
+export interface IPlaylistsSource {
+    getPlaylists(): IPlaylist[]
+}

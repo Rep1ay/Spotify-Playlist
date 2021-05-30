@@ -15,7 +15,7 @@ export class PlaylistEditFormComponent implements OnInit {
   draft!: IPlaylist;
 
   @Output() cancel = new EventEmitter();
-  @Output() save = new EventEmitter();
+  @Output() save = new EventEmitter<IPlaylist>();
 
   ngOnInit(): void {
     this.draft = { ...this.playlist};
@@ -26,7 +26,7 @@ export class PlaylistEditFormComponent implements OnInit {
   }
 
   saveClicked() {
-    this.save.emit()
+    this.save.emit(this.draft)
   }
 
 }
