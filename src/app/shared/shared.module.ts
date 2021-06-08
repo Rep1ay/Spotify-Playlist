@@ -14,6 +14,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatButtonModule } from '@angular/material/button'
 import { FormsModule } from '@angular/forms';
 import { YesnoPipe } from './yesno/yesno.pipe';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { YesnoPipe } from './yesno/yesno.pipe';
     MatInputModule,
     MatCheckboxModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   exports: [
     MatSidenavModule,
@@ -45,7 +47,8 @@ import { YesnoPipe } from './yesno/yesno.pipe';
      MatCheckboxModule,
      FormsModule,
      YesnoPipe,
-     MatButtonModule
+     MatButtonModule,
+     MatCardModule
   ]
 })
 export class SharedModule { }
